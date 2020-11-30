@@ -1,0 +1,10 @@
+## Ignore media files
+
+media/
+
+## Ignore migrations/database
+
+*/migrations/*
+db.sqlite3
+*/__pycache__/*
+static/*
