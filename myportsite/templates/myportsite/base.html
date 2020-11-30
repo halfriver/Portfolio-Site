@@ -4,42 +4,71 @@
   <head>
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/override.css' %}">
     {% block styles %}{% endblock styles %}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     {% block scripts %}{% endblock scripts %}
-    <title>{% block title %}{% endblock title %} | Kayko Ohkawa</title>
+    <title>Kayko Ohkawa{% block title %}{% endblock title %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:15px">
-    {% block nav-home %}<a class="navbar-brand" href="{% url 'home' %}">Home</a>{% endblock %}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item {% block nav-cv %}{% endblock %}">
-          <a class="nav-link" href="{% url 'main_cv' %}">Curriculum Vitae<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item {% block nav-programming %}{% endblock %}">
-          <a class="nav-link" href="{% url 'main_program' %}">Programming<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item {% block nav-art %}{% endblock %}">
-          <a class="nav-link" href="{% url 'main_art' %}">Art<span class="sr-only"></span></a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+    {% block banner %}
+    <div class="banner-container">
+      <img src="{% static 'media/banner_test.png' %}" class="banner">
     </div>
+    {% endblock banner %}
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+      <div class = container>
+        <a class="navbar-brand" href="{% url 'home' %}"><img id="logo" src="{% static 'media/icon_test.png' %}"></svg></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% block nav-home %}{% endblock %}">
+              <a class="nav-link" href="{% url 'home' %}">Kayko Ohkawa<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item {% block nav-cv %}{% endblock %}">
+              <a class="nav-link" href="{% url 'main_cv' %}">Curriculum Vitae<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item {% block nav-programming %}{% endblock %}">
+              <a class="nav-link" href="{% url 'main_program' %}">Programming<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item {% block nav-art %}{% endblock %}">
+              <a class="nav-link" href="{% url 'main_art' %}">Art<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item {% block nav-contact %}{% endblock %}">
+              <a class="nav-link" href="%contact">Contact<span class="sr-only"></span></a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link p-2" href="https://github.com/halfriver">
+                <i class="fa">&#xf09b;</i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2" href="https://www.linkedin.com/in/ohkawak/">
+                <i class="fa">&#xf08c;</i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2" href="https://www.instagram.com/halfriver/">
+                <i class="fa">&#xf16d;</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
-    <div class="container">
-      {% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
+
+    <div class="container foot">
+      © <script type="text/javascript">document.write(new Date().getFullYear());</script> Kayko Ohkawa
     </div>
   </body>
 </html>

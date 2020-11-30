@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %} | About{% endblock %}
+{% block nav-home %}active{% endblock %}
 {% block content %}
-
+<div class="banner-text">
+  Condensed description/tagline<br>
+  Second line
+</div>
+<div class="container" style="min-height:1000px">
+  <div class="container">
+    <div class="row">
+      <div class="col section-head">About</div>
+    </div>
+    <div class="row">
+      <div class="section-body">
+        My name is Kayko Ohkawa.
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
