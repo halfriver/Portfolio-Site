@@ -4,4 +4,5 @@ from programming.models import Program
 
 class MainProgram(TemplateView):
     model = Program
+    template_name = "programs.html"
     # context_object_name = "cv"

@@ -4,4 +4,4 @@ from cv.models import CVDoc
 
 class MainCV(TemplateView):
     model = CVDoc
-    # context_object_name = "cv"
+    template_name = "cv.html"
