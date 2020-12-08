@@ -2,6 +2,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cv.css' %}">
+{% endblock styles %}
+
 {% block nav-cv %}active{% endblock %}
 
 {% block title %} | Curriculum Vitae{% endblock %}
@@ -14,9 +18,185 @@
 
 {% block banner-text %}
 <div class="medium-banner-text">
-  Under Construction
+  CV & Resume
 </div>
 {% endblock %}
 
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col section-head" style="font-size:2rem;">
+      Kayko Ohkawa
+      <div style="font-size:1.5rem; font-weight:normal">Graduate Student</div>
+    </div>
+    <br>
+
+  </div>
+  <div class="row">
+    <div class="section-body">
+      Introductory Text
+    </div>
+  </div>
+
+  <div class="row download-bar">
+    <div class="col-lg-2"></div>
+    <div class="col-12 col-lg-4">
+      <a href="{% static 'files/OhkawaCV.pdf' %}" class="download-button" title="Download PDF" download>
+        Download CV PDF
+      </a>
+    </div>
+    <div class="col-12 col-lg-4">
+      <a href="{% static 'files/OhkawaResume.pdf' %}" class="download-button" title="Download PDF" download>
+        Download Resume PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col section-head">Education</div>
+  </div>
+  <div class="row">
+    <div class="section-body">
+      <div class="row cv-head">
+        <div class="col-4">
+          University of Pittsburgh
+        </div>
+        <div class="col-8 cv-label">
+          Master of Science in Quantitative Economics
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          Expected Graduation: <i>April 2021</i>
+          <br>Information
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-head cv-label">
+          Bachelor of Arts in Economics
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>August 2017</i>
+          <br>Information
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-head cv-label">
+          Bachelor of Science in Geology
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>August 2017</i>
+          <br>Information
+        </div>
+      </div>
+
+      <div class="row cv-head">
+        <div class="col-4">
+          Study Abroad
+        </div>
+        <div class="col-8">
+          <i>Sophia University</i> 上智大学
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>Summer 2015</i>
+          <br>Information
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col section-head"><a name="contact">Work Experience</a></div>
+  </div>
+  <div class="row">
+    <div class="section-body">
+      <div class="row cv-head">
+        <div class="col-4">
+          University of Pittsburgh
+        </div>
+        <div class="col-8 cv-label">
+          Internal Auditing Clerk
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>March 2018 - August 2020</i>
+          <br>Information
+        </div>
+      </div>
+      <div class="row justify-content-end cv-head">
+        <div class="col-8 cv-label">
+          Shipping and Receiving
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>January 2019 - March 2019</i>
+          <br>Information
+        </div>
+      </div>
+      <div class="row justify-content-end cv-head">
+        <div class="col-8 cv-label">
+          Receptionist
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-8 cv-body">
+          <i>September 2017 - March 2018</i>
+          <br>Information
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col section-head"><a name="contact">Skills</a></div>
+  </div>
+  <div class="row">
+    <div class="section-body cv-set">
+      <div class="row cv-head">
+        <div class="col-4">
+          Software
+        </div>
+        <div class="col-4">
+          Programming
+        </div>
+        <div class="col-4">
+          Other
+        </div>
+      </div>
+      <div class="row cv-body">
+        <div class="col-4">
+          Microsoft Office Suite
+          <br>Adobe Acrobat Pro
+          <br>Adobe Photoshop
+          <br>Blender
+          <br>Stata
+          <br>ArcGIS
+        </div>
+        <div class="col-4">
+          <a style="color:grey; " href="https://github.com/halfriver" target="_blank">(check out my <u>GitHub</u>!)</a>
+          <br>Python (pandas, numpy, Django)
+          <br>R (dplyr)
+          <br>SQL
+          <br>HTML
+          <br>CSS (Bootstrap)
+          <br>JavaScript (jQuery)
+        </div>
+        <div class="col-4">
+          Japanese (conversational)
+          <br>Spanish (basic)
+          <br>Chinese (basic)
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 {% endblock %}

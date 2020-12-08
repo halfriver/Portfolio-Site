@@ -1,0 +1,45 @@
+.download-bar {
+  padding: 10px 10px 10px 10px;
+}
+
+.download-button {
+  display: flex;
+  height: 120px;
+  width: 80%;
+  margin: 5px auto 10px auto;
+  border-radius: 15px;
+  border: 2px solid #0a483b;
+  background-color: white;
+  color: #0a483b;
+  font-size: 1.15rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-button:hover {
+  background-color: #0a483b;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.cv-head {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.cv-label {
+  font-style: italic;
+}
+
+.cv-body {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.cv-set {
+  text-align: center;
+}
