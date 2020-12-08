@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% load static %}
 
 {% block nav-programming %}active{% endblock %}
 
 {% block title %} | Programming{% endblock %}
-{% block content %}
-<div class="banner-text">
+
+{% block banner %}
+<div class="medium-banner-container">
+  <img class="medium-banner" src="{% static 'media/banner_test.png' %}">
+</div>
+{% endblock banner %}
+
+{% block banner-text %}
+<div class="medium-banner-text">
   Under Construction
 </div>
+{% endblock %}
+
+{% block content %}
 {% endblock %}
