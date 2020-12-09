@@ -14,7 +14,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="{% static 'js/base.js' %}"></script>
     {% block scripts %}{% endblock scripts %}
+
     <title>Kayko Ohkawa{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'media/favicon.ico' %}"/>
   </head>
   <body>
     {% block banner %}
@@ -47,18 +49,23 @@
           <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <li class="nav-item">
               <a class="nav-link p-2" href="https://github.com/halfriver" target="_blank">
-                <i class="fa">&#xf09b;</i>
+                <i class="fa fa-icon">&#xf09b;</i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link p-2" href="https://www.linkedin.com/in/ohkawak/" target="_blank">
-                <i class="fa">&#xf08c;</i>
+                <i class="fa fa-icon">&#xf08c;</i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link p-2" href="https://www.instagram.com/halfriver/" target="_blank">
-                <i class="fa">&#xf16d;</i>
+                <i class="fa fa-icon">&#xf16d;</i>
               </a>
+            </li>
+            <li class="nav-item">
+              <label class="switch p-2">
+                <input type="checkbox"><span class="slider round"></span>
+              </label>
             </li>
           </ul>
         </div>
