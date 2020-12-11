@@ -2,9 +2,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block styles %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/cv.css' %}">
-{% endblock styles %}
+{% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/cv.css' %}">{% endblock styles %}
 
 {% block nav-cv %}active{% endblock %}
 
@@ -55,55 +53,52 @@
   </div>
   <div class="row">
     <div class="section-body">
-      <div class="row cv-head">
-        <div class="col-4">
+      <div class="row">
+        <div class="col-4 cv-head">
           University of Pittsburgh
-        </div>
-        <div class="col-8 cv-label">
-          <a href="https://www.mqe.pitt.edu/" target="_blank">Master of Science in Quantitative Economics <i class="fa fa-link"></i></a>
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          Expected Graduation: <i>April 2021</i>
-          <br>Information
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-head cv-label">
-          Bachelor of Arts in Economics
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>August 2017</i>
-          <br>Information
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-head cv-label">
-          Bachelor of Science in Geology
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>August 2017</i>
-          <br>Information
-        </div>
-      </div>
-
-      <div class="row cv-head">
-        <div class="col-4">
-          Study Abroad
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
         </div>
         <div class="col-8">
-          <i>Sophia University</i> 上智大学
+          <div class="cv-head">
+            <a href="https://www.mqe.pitt.edu/" target="_blank">Master of Science in Quantitative Economics <i class="fa fa-link"></i></a>
+          </div>
+          <div class="cv-body">
+            Expected: <i>April 2021</i>
+            <br>Information
+          </div>
+          <div class="cv-head">
+            Bachelor of Arts in Economics
+          </div>
+          <div class="cv-body">
+            <i>August 2017</i>
+            <br>Information
+          </div>
+          <div class="cv-head">
+            Bachelor of Science in Geology
+          </div>
+          <div class="cv-body">
+            <i>August 2017</i>
+            <br>Information
+          </div>
         </div>
       </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>Summer 2015</i>
-          <br>Information
+      <div class="row cv-set">
+        <div class="col-4 cv-head">
+          Sophia University 上智大学
+          <div class="cv-body">
+            Tokyo, JPN
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="cv-head">
+            Japanese Summer Intensive Language Program
+          </div>
+          <div class="cv-body">
+            <i>Summer 2015</i>
+            <br>Information
+          </div>
         </div>
       </div>
     </div>
@@ -114,40 +109,100 @@
   </div>
   <div class="row">
     <div class="section-body">
-      <div class="row cv-head">
-        <div class="col-4">
+      <div class="row">
+        <div class="col-4 cv-head">
           University of Pittsburgh
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
         </div>
-        <div class="col-8 cv-label">
-          Internal Auditing Clerk
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>March 2018 - August 2020</i>
-          <br>Information
-        </div>
-      </div>
-      <div class="row justify-content-end cv-head">
-        <div class="col-8 cv-label">
-          Shipping and Receiving
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>January 2019 - March 2019</i>
-          <br>Information
-        </div>
-      </div>
-      <div class="row justify-content-end cv-head">
-        <div class="col-8 cv-label">
-          Receptionist
+        <div class="col-8">
+          <div class="cv-head">
+            Compliance Auditing Clerk
+          </div>
+          <div class="cv-body">
+            <i>March 2019 - August 2020</i>
+            <br>Information
+          </div>
+          <div class="cv-head">
+            Shipping and Receiving Associate
+          </div>
+          <div class="cv-body">
+            <i>January 2019 - March 2019</i>
+            <br>Information
+          </div>
         </div>
       </div>
-      <div class="row justify-content-end">
-        <div class="col-8 cv-body">
-          <i>September 2017 - March 2018</i>
-          <br>Information
+
+      <div class="row cv-set">
+        <div class="col-4 cv-head">
+          <a href="https://www.growpittsburgh.org/about-us/locations/garden-dreams/" target="_blank">Garden Dreams <i class="fa fa-link"></i></a>
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="cv-head">
+            Production Team Member
+          </div>
+          <div class="cv-body">
+            <i>March 2018 - June 2018</i>
+            <br>Information
+          </div>
+        </div>
+      </div>
+
+      <div class="row cv-set">
+        <div class="col-4 cv-head">
+          University of Pittsburgh
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="cv-head">
+            Receptionist
+          </div>
+          <div class="cv-body">
+            <i>September 2017 - March 2018</i>
+            <br>Information
+          </div>
+        </div>
+      </div>
+
+      <div class="row cv-set">
+        <div class="col-4 cv-head">
+          Phipps Conservatory and Botanical Gardens
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="cv-head">
+            Guest Service Associate
+          </div>
+          <div class="cv-body">
+            <i>October 2017 - January 2018</i>
+            <br>Information
+          </div>
+        </div>
+      </div>
+
+      <div class="row cv-set">
+        <div class="col-4 cv-head">
+          Grow Pittsburgh
+          <div class="cv-body">
+            Pittsburgh, PA, USA
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="cv-head">
+            Urban Farm Apprentice
+          </div>
+          <div class="cv-body">
+            <i>July 2017 - September 2018</i>
+            <br>Information
+          </div>
         </div>
       </div>
     </div>
@@ -157,7 +212,7 @@
     <div class="col section-head"><a name="contact">Skills</a></div>
   </div>
   <div class="row">
-    <div class="section-body cv-set">
+    <div class="section-body"  style="text-align:center;">
       <div class="row cv-head">
         <div class="col-4">
           Software
@@ -179,7 +234,7 @@
           <br>ArcGIS
         </div>
         <div class="col-4">
-          <a style="color:grey; " href="https://github.com/halfriver" target="_blank">(check out my <u>GitHub</u>!)</a>
+          <a style="color:grey;" href="https://github.com/halfriver" target="_blank">(check out my <u>GitHub</u>!)</a>
           <br>Python (pandas, numpy, Django)
           <br>R (dplyr)
           <br>SQL
@@ -193,7 +248,6 @@
           <br>Chinese (basic)
         </div>
       </div>
-
     </div>
   </div>
 </div>
