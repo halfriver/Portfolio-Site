@@ -1,0 +1,57 @@
+<div>
+  <div class="row">
+    <div class="col">
+      <div id="description">
+        <div class="section-head">
+          Armstrong Number
+        </div>
+        <div class="section-body">
+          An Armstrong Number, or narcissistic number, is a number that equals the sum of each digit taken to the power of the total number of digits.
+          <br>Example: Take 1634. Four digits. So, 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup> = 1 + 1296 + 81 + 256 = 1634. So 1634 is an Armstrong number.
+        </div>
+      </div>
+      <div id="input" class="section-body">
+        <div class="input-group">
+          <input type="text" placeholder="Enter a number"></input>
+          <div class="input-group-append">
+            <button id="run" class="btn btn-info">Check Number</button>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div id="display" class="section-body"></div>
+      <div id="results" class="section-body"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#run").click(function() {
+      let userInput = $("#input").find("input").val();
+      if (Math.floor(userInput)==userInput && $.isNumeric(userInput)) {
+        var n_sq = [];
+        var str = userInput.toString();
+        var work = "";
+        for (var i = 0; i < str.length; i++) {
+            n_sq.push(parseInt(str[i])**str.length);
+            work += parseInt(str[i]) + "<sup>" + str.length +"</sup> + ";
+        }
+        work = work.slice(0, -2)
+        if (n_sq.reduce((a,b) => a + b, 0) == userInput) {
+          $("#results").text(userInput + " is an Armstrong number.");
+          work += " = " + userInput;
+        }
+        else {
+          $("#results").text(userInput + " is not an Armstrong number.");
+          work += " = " + n_sq.reduce((a,b) => a + b, 0);
+        }
+        $("#display").html(work);
+      }
+      else {
+        $("#display").text("...");
+        $("#results").text("Please input a number");
+      }
+    });
+  });
+</script>
