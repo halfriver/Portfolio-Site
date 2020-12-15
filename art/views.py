@@ -5,7 +5,7 @@ from art.models import ArtPiece
 class MainArt(ListView):
     model = ArtPiece
     template_name = "gallery.html"
-    # context_object_name = "characters"
+    context_object_name = "art"
 
     def get_queryset(self, **kwargs):
         queryset = ArtPiece.objects.all()

@@ -1,3 +1,13 @@
+.large-banner-text {
+  color: white;
+  width: 60%;
+  height: 420px;
+  padding-top: 132px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 .tab-box {
   width: 100%;
@@ -22,10 +32,6 @@
 
 .tab-body {
   font-size: 1rem;
-}
-
-.divided {
-  display: flex;
 }
 
 .divider {

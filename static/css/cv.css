@@ -28,12 +28,12 @@ a, a:hover {
 }
 
 .cv-head {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: bold;
 }
 
 .cv-body {
-  font-size: 1.0rem;
+  font-size: 0.9rem;
   margin-bottom: 0.75rem;
   font-weight: lighter;
 }
@@ -43,6 +43,6 @@ a, a:hover {
 }
 
 .fa-link {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: grey;
 }

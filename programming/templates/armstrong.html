@@ -14,7 +14,7 @@
         <div class="input-group">
           <input type="text" placeholder="Enter a number"></input>
           <div class="input-group-append">
-            <button id="run" class="btn btn-info">Check Number</button>
+            <button id="run" class="btn btn-info btn-custom">Check Number</button>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
 <script>
   $(document).ready(function() {
     $("#run").click(function() {
-      let userInput = $("#input").find("input").val();
+      let userInput = $("#input").find("input").val().trim();
       if (Math.floor(userInput)==userInput && $.isNumeric(userInput)) {
         var n_sq = [];
         var str = userInput.toString();
