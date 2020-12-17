@@ -37,11 +37,6 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  <div class="row align-items-center">
-    <!-- <div class="large-banner-text">
-      Art Portfolio
-    </div> -->
-  </div>
 </div>
 {% endblock banner %}
 
@@ -63,9 +58,9 @@
           <div class="nav navbar-dark navbar-expand-lg flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-tab active" id="v-pills-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
             <div class="divider"></div>
-            {% for i in art.tags %}
+            {% for i in art %}
               <div class="divider"></div>
-              <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
+              <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i.tag_set}}</a>
             {% endfor %}
           </div>
         </div>
@@ -77,9 +72,9 @@
         <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
           item1
         </div>
-        {% for i in art.tags %}
+        {% for i in art %}
           <div class="tab-pane fade" id="{{i|cut:" "}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab">
-            {{i}}
+            {{i.tags}}
           </div>
         {% endfor %}
       </div>

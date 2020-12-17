@@ -10,25 +10,25 @@
           <br>Example: Take 1634. Four digits. So, 1<sup>4</sup> + 6<sup>4</sup> + 3<sup>4</sup> + 4<sup>4</sup> = 1 + 1296 + 81 + 256 = 1634. So 1634 is an Armstrong number.
         </div>
       </div>
-      <div id="input" class="section-body">
+      <div id="armstrong-input" class="section-body">
         <div class="input-group">
           <input type="text" placeholder="Enter a number"></input>
           <div class="input-group-append">
-            <button id="run" class="btn btn-info btn-custom">Check Number</button>
+            <button id="armstrong-run" class="btn btn-info btn-custom">Check Number</button>
           </div>
         </div>
       </div>
       <div class="divider"></div>
-      <div id="display" class="section-body"></div>
-      <div id="results" class="section-body"></div>
+      <div id="armstrong-display" class="section-body"></div>
+      <div id="armstrong-results" class="section-body"></div>
     </div>
   </div>
 </div>
 
 <script>
   $(document).ready(function() {
-    $("#run").click(function() {
-      let userInput = $("#input").find("input").val().trim();
+    $("#armstrong-run").click(function() {
+      let userInput = $("#armstrong-input").find("input").val().trim();
       if (Math.floor(userInput)==userInput && $.isNumeric(userInput)) {
         var n_sq = [];
         var str = userInput.toString();
@@ -39,18 +39,18 @@
         }
         work = work.slice(0, -2)
         if (n_sq.reduce((a,b) => a + b, 0) == userInput) {
-          $("#results").text(userInput + " is an Armstrong number.");
+          $("#armstrong-results").text(userInput + " is an Armstrong number.");
           work += " = " + userInput;
         }
         else {
-          $("#results").text(userInput + " is not an Armstrong number.");
+          $("#armstrong-results").text(userInput + " is not an Armstrong number.");
           work += " = " + n_sq.reduce((a,b) => a + b, 0);
         }
-        $("#display").html(work);
+        $("#armstrong-display").html(work);
       }
       else {
-        $("#display").text("...");
-        $("#results").text("Please input a number");
+        $("#armstrong-display").text("...");
+        $("#armstrong-results").text("Please input a number");
       }
     });
   });

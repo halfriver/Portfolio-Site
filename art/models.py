@@ -7,8 +7,8 @@ class ArtPiece(models.Model):
     date = models.DateField(null=True)
     tags = models.TextField(null=True)
 
-    def tag_set(self, x):
-        self.tags = [x for x in tags.split(",")]
+    def tag_set(self):
+        return self.tags.split(",")
 
     def __str__(self):
         return self.name
