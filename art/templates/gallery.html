@@ -11,7 +11,6 @@
 {% block title %} | Art Portfolio{% endblock %}
 
 {% block banner %}
-<!-- My attempt -->
 <div id="artCarousel" class="carousel slide large-banner-container" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#artCarousel" data-slide-to="0" class="active"></li>
@@ -20,7 +19,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Sample 1">
+      <img class="large-banner" src="{% static 'media/da4.jpg' %}" alt="Sample 1">
     </div>
     <div class="carousel-item">
       <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Sample 2">
@@ -46,7 +45,6 @@
     Art Portfolio
   </div>
 </div>
-
 {% endblock %}
 
 {% block content %}
@@ -58,9 +56,9 @@
           <div class="nav navbar-dark navbar-expand-lg flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-tab active" id="v-pills-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
             <div class="divider"></div>
-            {% for i in art %}
+            {% for i in tag %}
               <div class="divider"></div>
-              <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i.tag_set}}</a>
+              <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
             {% endfor %}
           </div>
         </div>
@@ -70,11 +68,17 @@
     <div class="col-lg-9" style="padding: 10px 5px;">
       <div class="tab-content tab-body" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
-          item1
+          show all
         </div>
-        {% for i in art %}
+        {% for i in tag %}
           <div class="tab-pane fade" id="{{i|cut:" "}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab">
-            {{i.tags}}
+            {% for key, value in art.items %}
+              {% if key == i.name %}
+                {% for artpiece in value %}
+                  {{artpiece}}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
           </div>
         {% endfor %}
       </div>

@@ -24,6 +24,11 @@
   font-size: 1rem;
 }
 
+.console-display {
+  font-family: 'Courier New';
+   line-height: normal;
+}
+
 .divided {
   display: flex;
 }

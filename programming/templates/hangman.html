@@ -63,7 +63,7 @@
                      "|    |______  <br>",
                      "|           | <br>",
                      "|___________| "];
-      var gallowsHTML = "<div style='font-family: Courier New; line-height: normal;'>";
+      var gallowsHTML = "<div class='console-display'>";
       for (var i = 0; i < gallows.length; i++) {
         gallows[i] = gallows[i].replaceAll(" ", "&#160;")
         gallowsHTML += gallows[i]
@@ -71,7 +71,7 @@
       gallowsHTML += "</div>";
       $("#hangman-gallows").html(gallowsHTML);
       // display word length in "_" and show place for unsuccessful guesses
-      var statusPrint = "<div style='font-family: Courier New; line-height: normal;'><br>";
+      var statusPrint = "<div class='console-display'><br>";
       var letterDict = {};
       for (let i = 0; i < word.length; i++) {
         statusPrint += "_ ";
@@ -83,7 +83,7 @@
         }
       var wrong = [];
       $("#hangman-status").html(statusPrint + "</div>");
-      $("#hangman-wrong").html("<div style='font-family: Courier New; line-height: normal;'>Wrong guesses: [" + wrong + " ]</div>");
+      $("#hangman-wrong").html("<div class='console-display'>Wrong guesses: [" + wrong + " ]</div>");
       };
       // display input section/button
       $("#hangman-input").removeAttr('hidden');;
