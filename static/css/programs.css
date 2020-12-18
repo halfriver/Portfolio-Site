@@ -26,7 +26,11 @@
 
 .console-display {
   font-family: 'Courier New';
-   line-height: normal;
+  line-height: normal;
+}
+
+.error-display {
+  color:red;
 }
 
 .divided {
