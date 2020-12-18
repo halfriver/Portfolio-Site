@@ -28,7 +28,8 @@
 <script>
   $(document).ready(function() {
     $("#armstrong-run").click(function() {
-      let userInput = $("#armstrong-input").find("input").val().trim();
+      var userInput = $("#armstrong-input").find("input").val().trim();
+      $('#armstrong-input').find('input').val('');
       if (Math.floor(userInput)==userInput && $.isNumeric(userInput)) {
         var n_sq = [];
         var str = userInput.toString();
@@ -52,6 +53,13 @@
         $("#armstrong-display").text("...");
         $("#armstrong-results").text("Please input a number");
       }
+    });
+    var input = document.getElementById("armstrong-input")
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("armstrong-run").click();
+      };
     });
   });
 </script>

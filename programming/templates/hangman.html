@@ -14,10 +14,14 @@
         <button id="hangman-start" class="btn btn-info btn-custom">Start a New Game</button>
       </div>
       <div class="divider"></div>
-      <div id="hangman-display" class="section-body"></div>
-      <div id="hangman-results" class="section-body"></div>
-      <div class="d-flex justify-content-center">
-        <div id="hangman-input" class="input-group"></div>
+      <div id="hangman-gallows" class="text-center section-body"></div>
+      <div id="hangman-status" class="text-center section-body"></div>
+      <div id="hangman-wrong" class="text-center section-body"></div>
+      <div id="hangman-input" class="justify-content-center input-group" hidden>
+        <input id="hangman-guess" type='text' placeholder='Enter a letter'></input>
+        <div class='input-group-append'>
+          <button id='hangman-run' class='btn btn-info btn-custom'>Guess</button>
+        </div>
       </div>
     </div>
   </div>
@@ -27,48 +31,104 @@
   $(document).ready(function() {
     $('#hangman-start').click(function() {
       // read dictionary doc and select a word
-      // var dictionary = new XMLHttpRequest();
-      // dictionary.open("GET", readTextFile("file:///C:/Users/ohkaw/Documents/dictionary.txt"), false);
-      // dictionary.onreadystatechange = function() {
-      //   if (dictionary.readyState === 4) {
-      //     if (dictionary.status === 200 || dictionary.status == 0) {
-      //       var allText = dictionary.responseText;
-      //       alert(allText);
-      //     };
-      //   };
-      // };
-      // dictionary.send(null);
-      // $.load("C:/Users/ohkaw/Documents/dictionary.txt", {name})
+      $.ajax('hangman-dict/',
+          {
+            data: {
+              csrfmiddlewaretoken: window.COOKIES.csrfmiddlewaretoken
+            },
+            type: 'GET',
+          }
+        )
+        .done(function(data) {
+          console.log(data);
+          var current_word;
+          current_word = data;
+          startGame(current_word)
+        })
+        .fail(function(xhr, errmsg, err) {
+           alert('There is an error.');
+           console.log(xhr.status + ": " + xhr.responseText);
+       });
+    });
 
-      var body_comp = ["o", "|", "\\", "/", "/", "\\"];
-      var body = [" ", " ", " ", " ", " ", " "];
-      var gallows = ["    ____      <br>",
-                     "   |    |     <br>",
-                     "   |    " + body[0] + "      <br>",
-                     "   |   " + body[2] + body[1] + body[3] + "   <br>",
-                     "   |    " + body[1] + "      <br>",
-                     "   |   " + body[4] + " " + body[5] + "   <br>",
-                     "  _|_         <br>",
-                     " |   |______  <br>",
-                     " |          | <br>",
-                     " |__________| "];
-      var gallows_html = "<div style='text-align:center; font-family: 'Lucida Console', monospace; line-height: normal;'>";
-      console.log(gallows.length)
+    function startGame(word) {
+      // display initial gallows
+      var gallows = ["   _____      <br>",
+                     "  |     |     <br>",
+                     "  |           <br>",
+                     "  |           <br>",
+                     "  |           <br>",
+                     "  |           <br>",
+                     " _|__         <br>",
+                     "|    |______  <br>",
+                     "|           | <br>",
+                     "|___________| "];
+      var gallowsHTML = "<div style='font-family: Courier New; line-height: normal;'>";
       for (var i = 0; i < gallows.length; i++) {
         gallows[i] = gallows[i].replaceAll(" ", "&#160;")
-        gallows_html += gallows[i]
+        gallowsHTML += gallows[i]
       };
-      gallows_html += "</div>";
-      $("#hangman-display").html(gallows);
+      gallowsHTML += "</div>";
+      $("#hangman-gallows").html(gallowsHTML);
+      // display word length in "_" and show place for unsuccessful guesses
+      var statusPrint = "<div style='font-family: Courier New; line-height: normal;'><br>";
+      var letterDict = {};
+      for (let i = 0; i < word.length; i++) {
+        statusPrint += "_ ";
+        if (!(word[i] in letterDict)) {
+          letterDict[word[i]] = [i];
+        }
+        else {
+          letterDict[word[i]].push(i)
+        }
+      var wrong = [];
+      $("#hangman-status").html(statusPrint + "</div>");
+      $("#hangman-wrong").html("<div style='font-family: Courier New; line-height: normal;'>Wrong guesses: [" + wrong + " ]</div>");
+      };
+      // display input section/button
+      $("#hangman-input").removeAttr('hidden');;
+    };
 
-      // show input section
-      var inputButton = "<input type='text' placeholder='Enter a letter'></input><div class='input-group-append'><button id='hangman-run' class='btn btn-info btn-custom'>Guess</button></div>";
-      $("#hangman-input").html(inputButton);
-      // use input
-      // }
-    });
     $("#hangman-run").click(function() {
-      let userInput = $("#hangman-run").find("input").val().trim();
+      var userInput = $("#hangman-guess").val().trim();
+      console.log(userInput)
+      $('#hangman-guess').val('');
+
+      // var bodyComp = ["o", "|", "\\", "/", "/", "\\"];
+      // var body = [" ", " ", " ", " ", " ", " "];
+      // var penalty = 0;
+      // var gallows = ["   _____      <br>",
+      //                "  |     |     <br>",
+      //                "  |    " + body[0] + "      <br>",
+      //                "  |   " + body[2] + body[1] + body[3] + "   <br>",
+      //                "  |    " + body[1] + "      <br>",
+      //                "  |   " + body[4] + " " + body[5] + "   <br>",
+      //                " _|__         <br>",
+      //                "|    |______  <br>",
+      //                "|           | <br>",
+      //                "|___________| "];
+      // var gallowsHTML = "<div style='font-family: Courier New; line-height: normal;'>";
+      // for (let i = 0; i < gallows.length; i++) {
+      //   gallows[i] = gallows[i].replaceAll(" ", "&#160;")
+      //   gallowsHTML += gallows[i]
+      // };
+      // gallowsHTML += "</div>";
+      // $("#hangman-gallows").html(gallowsHTML);
+      // $("#hangman-status").html(statusPrint);
+      // $("#hangman-wrong").html("Wrong guesses: [" + wrong + " ]");
+    });
+
+    function endGame() {
+      $("#hangman-input").hide();
+    };
+
+    // hit enter to submit guess
+    var input = document.getElementById("hangman-guess")
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("hangman-run").click();
+      };
     });
   });
 </script>

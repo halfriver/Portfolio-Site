@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView, DetailView
+from django.views.generic import ListView, TemplateView, DetailView, View
+from django.http import HttpResponse
 from programming.models import Program
+from django.templatetags.static import static
+from random import choice
+from myportsite.settings import BASE_DIR
+import os
 
 class MainProgram(ListView):
     model = Program
@@ -17,5 +22,12 @@ class MainProgram(ListView):
         return context
     # context_object_name = "cv"
 
-class Armstrong(TemplateView):
-    template_name = "armstrong.html"
+class Dict(View):
+    def get(self, request, *args, **kwargs):
+        dict = static('files/dictionary.txt')
+        f = open(BASE_DIR + dict, "r")
+        choices = f.read().split()
+        f.close()
+        word = choice(choices)
+
+        return HttpResponse(word)
