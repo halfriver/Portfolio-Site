@@ -54,23 +54,11 @@
   width: 100%;
 }
 
-.btn-custom {
-  background-color: #0a483b;
-  border-color: #0a483b;
-}
-
-.btn-custom-inv {
-  background-color: white;
-  border-color: #0a483b;
-  color: #0a483b;
-}
-
-.btn-custom-inv:hover {
-  background-color: #0a483b;
-  color: white;
-}
-
 .nav-tab.active {
   color: black;
   font-weight: bold;
+}
+
+.code-card {
+  
 }
