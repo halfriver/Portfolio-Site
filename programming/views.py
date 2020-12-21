@@ -7,6 +7,7 @@ from random import choice
 from myportsite.settings import BASE_DIR
 import os
 
+
 class MainProgram(ListView):
     model = Program
     template_name = "programs.html"
@@ -16,15 +17,16 @@ class MainProgram(ListView):
         queryset = Program.objects.all()
         return queryset
 
-    # **kwargs = can take any number of keyword arguments, without needing to specify them
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
     # context_object_name = "cv"
 
+
 class Dict(View):
     def get(self, request, *args, **kwargs):
         dict = static('files/dictionary.txt')
+        print(BASE_DIR)
         f = open(BASE_DIR + dict, "r")
         choices = f.read().split()
         f.close()

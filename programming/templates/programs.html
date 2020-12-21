@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% load static %}
 
 {% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/programs.css' %}">{% endblock styles %}
 
-{% block scripts %}<script src="{% static 'js/base.js' %}"></script>{% endblock scripts %}
+{% block scripts %}
+{% endblock scripts %}
 
 {% block nav-programming %}active{% endblock %}
 
@@ -52,7 +52,7 @@
         {% for i in programs %}
           <div class="tab-pane fade" id="{{i|cut:" "}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab">
             <div class="tab-box">
-              {% include i.file %}
+              {% include i.html %}
             </div>
           </div>
         {% endfor %}
