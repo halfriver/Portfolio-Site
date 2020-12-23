@@ -22,6 +22,7 @@
 
 .tab-body {
   font-size: 1rem;
+  margin-left: 1rem;
 }
 
 .console-display {
@@ -30,7 +31,7 @@
 }
 
 .error-display {
-  color:red;
+  color: red;
 }
 
 .divided {
@@ -44,14 +45,11 @@
 }
 
 .section-head {
-  font-size: 1.25rem;
   margin: 0px;
 }
 
 .section-body {
-  font-size: 1rem;
   margin: .75rem 0px;
-  width: 100%;
 }
 
 .nav-tab.active {
@@ -60,5 +58,27 @@
 }
 
 .code-card {
-  
+  padding-right: 0px;
+  display: block;
+  border: 2px solid #0a483b;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.code-card:hover {
+  background-color: lightgrey;
+}
+
+.card-head {
+  text-align: center;
+  font-weight: normal;
+}
+
+.card-body {
+  text-align: left;
+  font-weight: lighter;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 6rem;
 }
