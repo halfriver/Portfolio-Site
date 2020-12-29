@@ -10,7 +10,7 @@ urlpatterns = [
     path('cv/', include('cv.urls')),
     path('programming/', include('programming.urls')),
     path('art/', include('art.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,7 +10,7 @@ class ArtTag(models.Model):
 
 class ArtPiece(models.Model):
     name = models.CharField(max_length=30, unique=True)
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True, upload_to="img")
     description = models.TextField(null=True)
     date = models.DateField(null=True)
     tags = models.ManyToManyField(ArtTag)

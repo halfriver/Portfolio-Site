@@ -19,12 +19,16 @@
 
 .download-button:hover {
   background-color: #0a483b;
-  color: white;
+  color: #f2f2f2;
 }
 
 a, a:hover {
   text-decoration: none;
-  color:black;
+  color: #1c1c1c;
+}
+
+ul {
+  margin-block-end: 0px;
 }
 
 .cv-head {
@@ -44,5 +48,5 @@ a, a:hover {
 
 .fa-link {
   font-size: 0.75rem;
-  color: grey;
+  color: #c2c2c2;
 }
