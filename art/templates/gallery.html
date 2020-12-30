@@ -144,8 +144,8 @@
 
   {% for i in tag %}
     <div id="modal-{{i|cut:" "}}" class="modal">
-      <span class="close">&times;</span>
       <div class="modal-content">
+        <span class="close">&times;</span>
         {% for key, value in art.items %}
           {% if key == i.name %}
             {% for artpiece in value %}
