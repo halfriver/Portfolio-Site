@@ -1,9 +1,14 @@
 /*
 DEFAULT COLORS
   color-white           #f2f2f2
-  text-color            #1c1c1c
+  color-offwhite        #e3e3da
+  color-offwhite2       #d1d1c5
+  color-offwhite3       #c7c7b5
+  color-offwhite4       #adad9a
+  text-color            #2e2e2e
   text-color-lightgrey  #c2c2c2
-  text-color-darkgrey   #ababab
+  text-color-grey       #ababab
+  text-color-darkgrey   #787878
   accent-color          #0a483b
   accent-fade           #a4bfba
 
@@ -11,24 +16,25 @@ DARK MODE COLORS
 */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2f2f2;
+  background: #e3e3da;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c2c2c2;
+  background: #c7c7b5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ababab;
+  background: #adad9a;
 }
 
-div {
+body {
   font-family: 'Noto Sans JP', sans-serif;
-  color: #1c1c1c;
+  color: #2e2e2e;
+  background-color: #e3e3da;
 }
 
 .large-banner-container {
@@ -44,7 +50,7 @@ div {
 }
 
 .large-banner-text {
-  color: #f2f2f2;
+  color: #e3e3da;
   width: 100%;
   height: 420px;
   padding-top: 132px;
@@ -72,7 +78,7 @@ div {
 }
 
 .medium-banner-text {
-  color: #f2f2f2;
+  color: #e3e3da;
   width: 100%;
   height: 220px;
   padding-top: 132px;
@@ -175,7 +181,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: darkgrey;
+  background-color: #adad9a;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -187,7 +193,7 @@ nav {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #f2f2f2;
+  background-color: #e3e3da;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -214,27 +220,28 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.slider::before {
+  background-size: contain;
+  background-image:url("../media/moon.png");
+}
+
 .btn-custom {
   background-color: #0a483b;
   border-color: #0a483b;
 }
 
 .btn-custom-inv {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background-color: rgba(0, 0, 0, 0);
   border-color: #0a483b;
   color: #0a483b;
 }
 
 .btn-custom-inv:hover {
   background-color: #0a483b;
-  color: #f2f2f2;
+  color: #e3e3da;
 }
 
 #search {
   align-items: right;
-}
-
-.slider::before {
-  background-size: contain;
-  background-image:url("https://cdn3.iconfinder.com/data/icons/meteocons/512/moon-black-512.png");
 }

@@ -9,7 +9,7 @@
   margin: 5px auto 10px auto;
   border-radius: 15px;
   border: 2px solid #0a483b;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
   color: #0a483b;
   font-size: 1.15rem;
   cursor: pointer;
@@ -19,7 +19,7 @@
 
 .download-button:hover {
   background-color: #0a483b;
-  color: #f2f2f2;
+  color: #e3e3da;
 }
 
 a, a:hover {
