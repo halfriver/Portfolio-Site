@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container gallery">
   <div class="tab-bar">
     <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item">
@@ -67,9 +67,9 @@
         {% for artpiece in all %}
           <div class="card">
             <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
-            <div class="card-img-overlay" data-description="{{artpiece.description}}" hidden>
-              <div class="row h-100 align-items-center">
-                <div class="col">
+            <div class="card-img-overlay" hidden>
+              <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-md-6 card-overlay">
                   <div class="row card-title d-flex justify-content-center">
                     {{artpiece.name}}
                   </div>
@@ -91,9 +91,9 @@
               {% for artpiece in value %}
                 <div class="card">
                   <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
-                  <div class="card-img-overlay" data-description="{{artpiece.description}}" hidden>
-                    <div class="row h-100 align-items-center">
-                      <div class="col">
+                  <div class="card-img-overlay" hidden>
+                    <div class="row h-100 align-items-center justify-content-center">
+                      <div class="col-md-6 card-overlay">
                         <div class="row card-title d-flex justify-content-center">
                           {{artpiece.name}}
                         </div>

@@ -87,7 +87,7 @@ div {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.45);
   width: 100%;
   padding: 15px 0px !important;
   position: fixed !important;
@@ -113,7 +113,7 @@ nav {
 }
 
 .navbar-collapse.in {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 #avatar {
