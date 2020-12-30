@@ -15,11 +15,9 @@ class MainArt(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         tags = ArtTag.objects.values_list("name", flat=True)
-        print(tags)
         art_dict = {}
         for tag in tags:
-            print(tag)
             art_dict[tag] = ArtPiece.objects.filter(tags__name__in=[tag])
         context["art"] = art_dict
-        print(art_dict)
+        context["all"] = ArtPiece.objects.all()
         return context

@@ -27,7 +27,7 @@ $(document).ready(function() {
     }
   });
 
-  $(".navbar-toggler").click(function(){
+  $(".navbar-toggler").click(function() {
     if ($("nav").height() > navbarInitialHeight && atTop) {
       $('nav').css('background-color', 'rgba(0, 0, 0, .35)');
     }

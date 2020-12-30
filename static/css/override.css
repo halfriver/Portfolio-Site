@@ -1,13 +1,30 @@
 /*
 DEFAULT COLORS
-  color-white       #f2f2f2
-  text-color        #1c1c1c
-  text-color-grey   #c2c2c2
-  accent-color      #0a483b
-  accent-fade       #a4bfba
+  color-white           #f2f2f2
+  text-color            #1c1c1c
+  text-color-lightgrey  #c2c2c2
+  text-color-darkgrey   #ababab
+  accent-color          #0a483b
+  accent-fade           #a4bfba
 
 DARK MODE COLORS
 */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ababab;
+}
 
 div {
   font-family: 'Noto Sans JP', sans-serif;
