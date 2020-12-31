@@ -5,11 +5,12 @@ DEFAULT COLORS
   color-offwhite2       #d1d1c5
   color-offwhite3       #c7c7b5
   color-offwhite4       #adad9a
-  text-color            #2e2e2e
+  color-black           #2e2e2e
   text-color-lightgrey  #c2c2c2
   text-color-grey       #ababab
   text-color-darkgrey   #787878
   accent-color          #0a483b
+  accent-light          #065c4a
   accent-fade           #a4bfba
 
 DARK MODE COLORS
@@ -228,6 +229,12 @@ input:checked + .slider:before {
 .btn-custom {
   background-color: #0a483b;
   border-color: #0a483b;
+  color: #e3e3da;
+}
+
+.btn-custom:hover {
+  background-color: #065c4a;
+  color: #e3e3da;
 }
 
 .btn-custom-inv {
@@ -237,7 +244,7 @@ input:checked + .slider:before {
   color: #0a483b;
 }
 
-.btn-custom-inv:hover {
+.btn-custom-inv:hover, .btn-custom-inv:active {
   background-color: #0a483b;
   color: #e3e3da;
 }

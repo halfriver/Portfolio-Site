@@ -24,7 +24,7 @@
 
 a, a:hover {
   text-decoration: none;
-  color: #1c1c1c;
+  color: #2e2e2e;
 }
 
 ul {
@@ -48,5 +48,5 @@ ul {
 
 .fa-link {
   font-size: 0.75rem;
-  color: #c2c2c2;
+  color: #ababab;
 }

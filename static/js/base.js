@@ -21,7 +21,7 @@ $(document).ready(function() {
         $('nav').css('background-color', 'rgba(0, 0, 0, 1)');
       } else {
         $('nav').attr('style', 'padding: 15px 0px !important');
-        $('nav').css('background-color', 'rgba(0, 0, 0, .35)');
+        $('nav').css('background-color', 'rgba(0, 0, 0, .45)');
       }
       atTop = true;
     }
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   $(".navbar-toggler").click(function() {
     if ($("nav").height() > navbarInitialHeight && atTop) {
-      $('nav').css('background-color', 'rgba(0, 0, 0, .35)');
+      $('nav').css('background-color', 'rgba(0, 0, 0, .45)');
     }
     else {
       $('nav').css('background-color', 'rgba(0, 0, 0, 1)');

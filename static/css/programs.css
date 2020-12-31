@@ -1,28 +1,98 @@
-
 .tab-box {
   width: 100%;
-  border: 2px solid #0a483b;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.padded {
+  padding: 0.5rem;
+}
+
+.intro {
+  font-size: 1rem;
+  background-color: #d1d1c5;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0px;
 }
 
 .nav-tab {
   font-size: 1rem;
   padding: 0.25rem 0.5rem;
   margin: 0.25rem 0rem;
-  color: grey;
+  color: #787878;
   width: 100%;
-  border-bottom: black;
+  font-weight: lighter;
+  border-left: 2px solid #a4bfba;
 }
 
-.nav-tab:hover {
-  color:black;
+.nav-tab:hover, .nav-tab:focus {
+  color: #1c1c1c;
   text-decoration: none;
+  border-left: 2px solid #0a483b;
+}
+
+.nav-tab.active {
+  color: #1c1c1c;
+  font-weight: bolder;
+  border-left: 2px solid #0a483b;
+}
+
+.sub {
+  margin-left: 2rem;
 }
 
 .tab-body {
   font-size: 1rem;
-  margin-left: 1rem;
+  background-color: #d1d1c5;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 34rem) {
+    .card-columns {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+    }
+}
+
+@media (min-width: 48rem) {
+    .card-columns {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+}
+
+@media (min-width: 62rem) {
+    .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+    }
+}
+
+a {
+  cursor: pointer;
+}
+
+.card {
+  background-color: #e3e3da;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  border: 2px solid #0a483b;
+}
+
+.card-title {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.demo {
+  padding-top: 1rem;
 }
 
 .console-display {
@@ -32,53 +102,5 @@
 
 .error-display {
   color: red;
-}
-
-.divided {
-  display: flex;
-}
-
-.divider {
-  border-bottom: 1px solid #0a483b;
-  margin: 1px;
-  width: 100%;
-}
-
-.section-head {
-  margin: 0px;
-}
-
-.section-body {
-  margin: .75rem 0px;
-}
-
-.nav-tab.active {
-  color: black;
-  font-weight: bold;
-}
-
-.code-card {
-  padding-right: 0px;
-  display: block;
-  border: 2px solid #0a483b;
-  border-radius: 10px;
-  padding: 0.5rem;
-  margin-right: 1rem;
-}
-
-.code-card:hover {
-  background-color: lightgrey;
-}
-
-.card-head {
-  text-align: center;
-  font-weight: normal;
-}
-
-.card-body {
-  text-align: left;
-  font-weight: lighter;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 6rem;
+  margin-top: 1rem;
 }

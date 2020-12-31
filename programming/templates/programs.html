@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% load extra_tags %}
 
 {% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/programs.css' %}">{% endblock styles %}
 
-{% block scripts %}
-{% endblock scripts %}
+{% block scripts %}<script src="{% static 'js/programs.js' %}"></script>{% endblock scripts %}
 
 {% block nav-programming %}active{% endblock %}
 
@@ -24,58 +24,108 @@
 
 {% block content %}
 <div class="container">
+  <div class="row padded">
+    <div class="col-12 intro section-body">
+      Though I have no formal education in programming, I pursued my own education in Python after graduating from undergraduate. I primarily program in Python, but there are some samples of JavaScript and R also included below.
+    </div>
+  </div>
+
   <div class="row">
-    <div class="col-lg-3" style="padding: 10px 10px;">
+    <div class="col-md-3 padded">
       <div class="tab-box">
         <div class="align-items-start">
           <div class="nav navbar-dark navbar-expand-lg flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-tab active" id="v-pills-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
-            <div class="divider"></div>
+            <a class="nav-tab active" id="nav-all-tab" data-toggle="tab" href="#show-all" role="tab" aria-controls="show-all" aria-selected="true">Show All</a>
+            <a class="nav-tab" id="nav-demo-tab" data-toggle="tab" href="#show-demo" role="tab" aria-controls="show-demo" aria-selected="false">Interactive Demos</span>
             {% for i in programs %}
-              <div class="divider"></div>
-              <a class="nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#{{i.name|cut:" "}}" role="tab" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
+              {% if i.demo %}
+              <a class="sub nav-tab" id="nav-{{i|cut:" "}}-tab" data-toggle="tab" href="#show-{{i|cut:" "}}" role="tab" aria-controls="show-{{i|cut:" "}}" aria-selected="false">{{i}}</a>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-9" style="padding: 10px 5px;">
-      <div class="tab-content tab-body" id="v-pills-tabContent">
+    <div class="col-md-9 padded">
+      <div class="tab-content tab-body" id="tabContent">
         <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
-          <!-- <div id="search" class="d-block">
-            <form class="form-inline my-2 my-lg-0 float-right">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-custom-inv my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div> -->
-          <div class="row">
+          <div class="card-columns">
             {% for i in programs %}
-              <div class="col-lg-4 code-card">
-                <div class="card-head">
-                  {{i.name}}
-                </div>
+            <a data-toggle="modal" data-target="#{{i|cut:" "}}-modal">
+              <div class="card" data-toggle="modal" data-target="{{i|cut:" "}}-modal">
                 <div class="card-body">
-                  {{i.description}}
-                </div>
-                {% if i.demo %}
-                  <div class="d-flex justify-content-center">
-                    <button id="nav-{{i|cut:" "}}-demo" class="btn btn-primary btn-custom-inv" data-toggle="tab" href="#{{i.name|cut:" "}}" aria-controls="nav-{{i|cut:" "}}" aria-selected="false">Demo</button>
+                  <div class="card-title">
+                    {{i.name}}
                   </div>
-                {% endif %}
+                  <div class="card-text">
+                    {{i.description}}
+                  </div>
+                  {% if i.demo %}
+                  <div class="demo d-flex justify-content-center">
+                    <button id="nav-{{i|cut:" "}}-demo" class="btn btn-custom-inv" data-program="{{i|cut:" "}}">Demo</button>
+                  </div>
+                  {% endif %}
+                </div>
               </div>
+            </a>
             {% endfor %}
           </div>
         </div>
-        {% for i in programs %}
-          <div class="tab-pane fade" id="{{i|cut:" "}}" role="tabpanel" aria-labelledby="{{i|cut:" "}}-tab">
-            <div class="tab-box">
-              {% include i.html %}
-            </div>
+
+        <div class="tab-pane fade" id="show-demo" role="tabpanel" aria-labelledby="show-demo-tab">
+          <div class="card-columns">
+          {% for i in programs %}
+            {% if i.demo %}
+            <a data-toggle="modal" data-target="#{{i|cut:" "}}-modal">
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title">
+                    {{i.name}}
+                  </div>
+                  <div class="card-text">
+                    {{i.description}}
+                  </div>
+                  <div class="demo d-flex justify-content-center">
+                    <button id="nav-{{i|cut:" "}}-demo" class="btn btn-custom-inv" data-program="{{i|cut:" "}}">Demo</button>
+                  </div>
+                </div>
+              </div>
+            </a>
+            {% endif %}
+          {% endfor %}
           </div>
+        </div>
+
+        {% for i in programs %}
+          {% if i.demo %}
+          <div class="tab-pane fade" id="show-{{i|cut:" "}}" role="tabpanel" aria-labelledby="show-{{i|cut:" "}}-tab">
+            {% include i.html %}
+          </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
+
+  {% for i in programs %}
+  <div class="modal fade" id="{{i|cut:" "}}-modal" tabindex="-1" role="dialog" aria-labelledby="{{i|cut:" "}}ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{i|cut:" "}}ModalLabel">New message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body console-display">
+          {{i.code|print_file_content}}
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}

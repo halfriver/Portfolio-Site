@@ -22,7 +22,7 @@
       <img class="large-banner" src="{% static 'media/da4.jpg' %}" alt="Sample 1">
     </div>
     <div class="carousel-item">
-      <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Sample 2">
+      <img class="large-banner" src="../../media/img/CyborgBalloon_Banner_2560x1440.png" alt="Sample 2">
     </div>
     <div class="carousel-item">
       <img class="large-banner" src="{% static 'media/banner_test.png' %}" alt="Sample 3">
@@ -74,7 +74,7 @@
                     {{artpiece.name}}
                   </div>
                   <div class="row d-flex justify-content-center">
-                    <button id="details-{{artpiece.name|cut:" "}}-all" class="btn btn-primary btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="all">Details</button>
+                    <button id="details-{{artpiece.name|cut:" "}}-all" class="btn btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="all">Details</button>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
                           {{artpiece.name}}
                         </div>
                         <div class="row d-flex justify-content-center">
-                          <button id="details-{{artpiece.name|cut:" "}}-{{key}}" class="btn btn-primary btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">Details</button>
+                          <button id="details-{{artpiece.name|cut:" "}}-{{key}}" class="btn btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">Details</button>
                         </div>
                       </div>
                     </div>
@@ -130,7 +130,7 @@
                 {{artpiece.name}}
               </div>
               <div class="container">
-                <p>{{artpiece.description}}</p>
+                {{artpiece.description|safe}}
                 <div class="date-container">
                   {{artpiece.date}}
                 </div>
@@ -163,7 +163,7 @@
                       {{artpiece.name}}
                     </div>
                     <div class="container">
-                      <p>{{artpiece.description}}</p>
+                      <p>{{artpiece.description|safe}}</p>
                       <div class="date-container">
                         {{artpiece.date}}
                       </div>
