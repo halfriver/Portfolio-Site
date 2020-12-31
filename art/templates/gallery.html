@@ -2,7 +2,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block styles %}<link rel="stylesheet" type="text/css" href="{% static 'css/art.css' %}">{% endblock styles %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/art.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+{% endblock styles %}
 
 {% block scripts %}<script src="{% static 'js/art.js' %}"></script>{% endblock scripts %}
 
@@ -67,18 +70,17 @@
         {% for artpiece in all %}
           <div class="card">
             <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
-            <div class="card-img-overlay" hidden>
-              <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-10 card-overlay">
-                  <div class="row card-title d-flex justify-content-center">
-                    {{artpiece.name}}
-                  </div>
-                  <div class="row d-flex justify-content-center">
-                    <button id="details-{{artpiece.name|cut:" "}}-all" class="btn btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="all">Details</button>
+            <a id="details-{{artpiece.name|cut:" "}}-all" data-counter="{{forloop.counter}}" data-tag="all">
+              <div class="card-img-overlay" hidden>
+                <div class="row h-100 align-items-center justify-content-center">
+                  <div class="col-8 card-overlay d-flex justify-content-center">
+                    <div class="card-title">
+                      {{artpiece.name}}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         {% endfor %}
       </div>
@@ -91,18 +93,17 @@
               {% for artpiece in value %}
                 <div class="card">
                   <img class="card-img" src="{% get_media_prefix %}{{artpiece.image}}" alt="Card image">
-                  <div class="card-img-overlay" hidden>
-                    <div class="row h-100 align-items-center justify-content-center">
-                      <div class="col-10 card-overlay">
-                        <div class="row card-title d-flex justify-content-center">
-                          {{artpiece.name}}
-                        </div>
-                        <div class="row d-flex justify-content-center">
-                          <button id="details-{{artpiece.name|cut:" "}}-{{key}}" class="btn btn-custom-inv" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">Details</button>
+                  <a id="details-{{artpiece.name|cut:" "}}-{{key}}" data-counter="{{forloop.counter}}" data-tag="{{i|cut:" "}}">
+                    <div class="card-img-overlay" hidden>
+                      <div class="row h-100 align-items-center justify-content-center">
+                        <div class="col-10 card-overlay">
+                          <div class="row card-title d-flex justify-content-center">
+                            {{artpiece.name}}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               {% endfor %}
             {% endif %}
@@ -113,23 +114,26 @@
   </div>
 
   <div id="modal-all" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      {% for artpiece in all %}
-        <div class="mySlides-all" data-tag="all">
-          <div class="slide-img-container">
-            <a href="{% get_media_prefix %}{{artpiece.image}}" target="_blank">
-              <img class="slide-img" src="{% get_media_prefix %}{{artpiece.image}}">
-            </a>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        {% for artpiece in all %}
+        <div class="mySlides-all">
+          <div class="modal-content-top">
+            <span class="close">&times;</span>
+            <div class="slide-img-container">
+              <a href="{% get_media_prefix %}{{artpiece.image}}" target="_blank">
+                <img class="slide-img" src="{% get_media_prefix %}{{artpiece.image}}">
+              </a>
+            </div>
+            <span class="prev" data-tag="all">&#10094;</span>
+            <span class="next" data-tag="all">&#10095;</span>
           </div>
-          <span class="prev">&#10094;</span>
-          <span class="next">&#10095;</span>
-          <div class="caption-container">
-            <div class="description-container">
-              <div class="title-container">
+          <div class="modal-content-bottom row align-items-center justify-content-center">
+            <div class="col-md-8">
+              <div class="caption-container title-container">
                 {{artpiece.name}}
               </div>
-              <div class="container">
+              <div class="caption-container">
                 {{artpiece.description|safe}}
                 <div class="date-container">
                   {{artpiece.date}}
@@ -139,44 +143,51 @@
           </div>
         </div>
       {% endfor %}
+      </div>
     </div>
   </div>
 
   {% for i in tag %}
-    <div id="modal-{{i|cut:" "}}" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
+  <div id="modal-{{i|cut:" "}}" class="modal">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8 col-md-10">
         {% for key, value in art.items %}
           {% if key == i.name %}
             {% for artpiece in value %}
-              <div class="mySlides-{{i|cut:" "}}" data-tag="{{i|cut:" "}}">
+            <div class="mySlides-{{i|cut:" "}}">
+              <div class="modal-content-top">
+                <span class="close">&times;</span>
                 <div class="slide-img-container">
                   <a href="{% get_media_prefix %}{{artpiece.image}}" target="_blank">
                     <img class="slide-img" src="{% get_media_prefix %}{{artpiece.image}}">
                   </a>
                 </div>
-                <span class="prev">&#10094;</span>
-                <span class="next">&#10095;</span>
-                <div class="caption-container">
-                  <div class="description-container">
-                    <div class="title-container">
-                      {{artpiece.name}}
-                    </div>
-                    <div class="container">
-                      <p>{{artpiece.description|safe}}</p>
-                      <div class="date-container">
-                        {{artpiece.date}}
-                      </div>
+                <span class="prev"  data-tag="{{i|cut:" "}}">&#10094;</span>
+                <span class="next"  data-tag="{{i|cut:" "}}">&#10095;</span>
+              </div>
+              <div class="modal-content-bottom row align-items-center justify-content-center">
+                <div class="col-md-8">
+                  <div class="caption-container title-container">
+                    {{artpiece.name}}
+                  </div>
+                  <div class="caption-container">
+                    <p>{{artpiece.description|safe}}</p>
+                    <div class="date-container">
+                      {{artpiece.date}}
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
             {% endfor %}
           {% endif %}
         {% endfor %}
       </div>
     </div>
+  </div>
   {% endfor %}
-
 </div>
+
+
+
 {% endblock %}

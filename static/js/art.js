@@ -1,15 +1,32 @@
 $(document).ready(function() {
   $(document).click(function(e) {
-    if (e.target.type == "submit") {
-      return;
-    }
-    if (!$(e.target).closest('.modal').length) {
+    var parentsClick = $(e.target).parents()
+      .map(function() {
+        return $(this).attr('class');
+      });
+    if (isModal(parentsClick)) {
       closeModal();
+    }
+    else {
+      return;
     }
   });
 
+  function isModal(x) {
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].toString()=="modal") {
+        for (let j = 0; j < x.length; j++) {
+          if (x[j].toString().startsWith('mySlides-')) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }
+    return false;
+  }
+
   function openModal(tag) {
-    console.log("OPEN");
     document.getElementById("modal-" + tag).style.display = "block";
     $('.carousel-indicators').attr('hidden', true);
     $('body').css("overflow-y","hidden");
@@ -52,11 +69,11 @@ $(document).ready(function() {
   );
 
   $('.prev').click(function() {
-    plusSlides(-1, $(this).parent().data('tag'));
+    plusSlides(-1, $(this).data('tag'));
   });
 
   $('.next').click(function() {
-    plusSlides(1, $(this).parent().data('tag'));
+    plusSlides(1, $(this).data('tag'));
   });
 
   $('.close').click(function() {

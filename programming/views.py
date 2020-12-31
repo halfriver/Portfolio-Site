@@ -21,12 +21,6 @@ class MainProgram(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-    def plain_text_view(code):
-        f = open(code, 'r')
-        content = f.read()
-        f.close()
-        return HttpResponse(content, content_type='text/plain')
-
 
 class Dict(View):
     def get(self, request, *args, **kwargs):
