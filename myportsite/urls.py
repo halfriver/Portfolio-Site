@@ -9,7 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('resume/', include('cv.urls')),
     path('programming/', include('programming.urls')),
-    path('art/', include('art.urls'))
+    path('art/', include('art.urls')),
+    path('contact/', include('contact.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/art.css' %}">
+{% endblock styles %}
+
+{% block scripts %}<script src="{% static 'js/art.js' %}"></script>{% endblock scripts %}
+
+{% block nav-contact %}active{% endblock %}
+
+{% block title %} | Contact{% endblock %}
+
+{% block banner %}
+<div class="medium-banner-container">
+  <img class="medium-banner" src="{% static 'media/banner_test.png' %}">
+</div>
+{% endblock banner %}
+
+{% block banner-text %}
+<div class="medium-banner-text">
+  Contact Me
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  henlo
+</div>
+{% endblock %}
