@@ -25,8 +25,8 @@
 {% block content %}
 <div class="container">
   <div class="row padded">
-    <div class="col-12 intro section-body">
-      Though I have no formal education in programming, I pursued my own education in Python after graduating from undergraduate. I primarily program in Python, but there are some samples of JavaScript and R also included below.
+    <div class="col-12 intro">
+      Though I have little formal education in programming, I pursued my own education in Python after graduating from undergraduate. I primarily program in Python, but there are some samples of JavaScript and R also included below.
     </div>
   </div>
 
@@ -52,8 +52,8 @@
         <div class="tab-pane fade show active" id="show-all" role="tabpanel" aria-labelledby="show-all-tab">
           <div class="card-columns">
             {% for i in programs %}
-            <a data-toggle="modal" data-target="#{{i|cut:" "}}-modal">
-              <div class="card" data-toggle="modal" data-target="{{i|cut:" "}}-modal">
+            <a id="modal-trigger" data-program="{{i|cut:" "}}">
+              <div class="card">
                 <div class="card-body">
                   <div class="card-title">
                     {{i.name}}
@@ -62,8 +62,8 @@
                     {{i.description}}
                   </div>
                   {% if i.demo %}
-                  <div class="demo d-flex justify-content-center">
-                    <button id="nav-{{i|cut:" "}}-demo" class="btn btn-custom-inv" data-program="{{i|cut:" "}}">Demo</button>
+                  <div id="demobtn" class="demo d-flex justify-content-center">
+                    <button class="btn btn-custom-inv demobtn" data-program="{{i|cut:" "}}">JS Demo</button>
                   </div>
                   {% endif %}
                 </div>
@@ -77,7 +77,7 @@
           <div class="card-columns">
           {% for i in programs %}
             {% if i.demo %}
-            <a data-toggle="modal" data-target="#{{i|cut:" "}}-modal">
+            <a id="modal-trigger" data-program="{{i|cut:" "}}">
               <div class="card">
                 <div class="card-body">
                   <div class="card-title">
@@ -86,8 +86,8 @@
                   <div class="card-text">
                     {{i.description}}
                   </div>
-                  <div class="demo d-flex justify-content-center">
-                    <button id="nav-{{i|cut:" "}}-demo" class="btn btn-custom-inv" data-program="{{i|cut:" "}}">Demo</button>
+                  <div id="demobtn" class="demo d-flex justify-content-center">
+                    <button class="btn btn-custom-inv demobtn" data-program="{{i|cut:" "}}">JS Demo</button>
                   </div>
                 </div>
               </div>
@@ -109,19 +109,21 @@
   </div>
 
   {% for i in programs %}
-  <div class="modal fade" id="{{i|cut:" "}}-modal" tabindex="-1" role="dialog" aria-labelledby="{{i|cut:" "}}ModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="{{i|cut:" "}}ModalLabel">New message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body console-display">
-          {{i.code|print_file_content}}
-        </div>
-        <div class="modal-footer">
+  <div id="modal-{{i|cut:" "}}" class="modal">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="modal-content row">
+          <span class="close">&times;</span>
+          <div class="row justify-content-center">
+            <div class="code-display title-display">
+              {{i.name}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="code-display console-display">
+              {{i.code|print_file_content}}
+            </div>
+          </div>
         </div>
       </div>
     </div>

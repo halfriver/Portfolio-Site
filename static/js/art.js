@@ -1,3 +1,5 @@
+var hideIndicator = 410;
+
 $(document).ready(function() {
   $(document).click(function(e) {
     var parentsClick = $(e.target).parents()
@@ -83,5 +85,14 @@ $(document).ready(function() {
   $('[id^=details]').click(function(){
     openModal($(this).data('tag'));
     currentSlide($(this).data('counter'), $(this).data('tag'));
+  });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > hideIndicator) {
+      $('.carousel-indicators').attr('hidden', true);
+    }
+    else {
+      $('.carousel-indicators').removeAttr('hidden');
+    }
   });
 });
