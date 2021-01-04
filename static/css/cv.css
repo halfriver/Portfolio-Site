@@ -22,25 +22,20 @@
   color: #e3e3da;
 }
 
-a, a:hover {
-  text-decoration: none;
-  color: #2e2e2e;
-}
-
 ul {
   margin-block-end: 0px;
 }
 
 .cv-head {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 .cv-body {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
   font-weight: 300;
-  line-height: 1.5rem;
+  line-height: 1.75rem;
 }
 
 b {

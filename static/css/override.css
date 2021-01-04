@@ -180,6 +180,33 @@ nav {
   margin-bottom: 1rem;
 }
 
+.section-body p {
+  text-indent: 50px;
+}
+
+.hobby-col {
+  padding-right: 5px;
+  padding-left: 5px;
+  max-width: 25%;
+}
+
+.hobby-pic {
+  border-radius: 0.3rem;
+  max-height: 250px;
+  width: auto;
+  /* max-width: 23%; */
+  height: auto;
+}
+
+a {
+  color: #2e2e2e;
+}
+
+a:hover {
+  color: #0a483b;
+  text-decoration: none;
+}
+
 .foot {
   text-align: right;
   font-weight: 300;
