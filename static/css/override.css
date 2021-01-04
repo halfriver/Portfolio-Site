@@ -196,6 +196,12 @@ nav {
   width: auto;
   /* max-width: 23%; */
   height: auto;
+  transition: transform .2s;
+}
+
+.hobby-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.45);
 }
 
 a {

@@ -6,6 +6,7 @@
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/programs.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'cdn/css/jquery.floatingscroll.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 {% endblock styles %}
 
 {% block scripts %}
@@ -144,7 +145,7 @@
   {% for i in programs %}
   <div id="modal-{{i|cut:" "}}" class="modal">
     <div class="row align-items-center justify-content-center h-100">
-      <div class="col-lg-8 col-md-10" style="padding:0px;">
+      <div class="col-lg-8 col-md-10 animate__animated animate__fadeInDown animate__faster" style="padding:0px;">
         <div class="modal-con">
           <span class="close">&times;</span>
           <div class="col-12" style="text-align: center;">

@@ -4,6 +4,7 @@
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/art.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 {% endblock styles %}
 
 {% block scripts %}<script src="{% static 'js/art.js' %}"></script>{% endblock scripts %}
@@ -114,7 +115,7 @@
 
   <div id="modal-all" class="modal">
     <div class="row align-items-center justify-content-center h-100">
-      <div class="col-lg-8 col-md-10">
+      <div class="col-lg-8 col-md-10 animate__animated animate__fadeInDown animate__faster">
         {% for artpiece in all %}
         <div class="mySlides-all">
           <div class="modal-content">
