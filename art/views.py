@@ -9,7 +9,7 @@ class MainArt(ListView):
     context_object_name = "tag"
 
     def get_queryset(self, **kwargs):
-        queryset = ArtTag.objects.all()
+        queryset = ArtTag.objects.all().order_by('name')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -19,5 +19,5 @@ class MainArt(ListView):
         for tag in tags:
             art_dict[tag] = ArtPiece.objects.filter(tags__name__in=[tag])
         context["art"] = art_dict
-        context["all"] = ArtPiece.objects.all()
+        context["all"] = ArtPiece.objects.all().order_by('-date')
         return context

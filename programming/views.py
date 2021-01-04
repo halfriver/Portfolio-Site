@@ -14,18 +14,22 @@ class MainProgram(ListView):
     context_object_name = "programs"
 
     def get_queryset(self, **kwargs):
-        queryset = Program.objects.all()
+        queryset = Program.objects.all().order_by('name')
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
 
+    def get_program_text():
+        with open(template_name, 'r') as f:
+            program_text = f.readlines()
+        return HttpResponse(program_text)
+
 
 class Dict(View):
     def get(self, request, *args, **kwargs):
         dict = static('files/dictionary.txt')
-        print(BASE_DIR)
         f = open(BASE_DIR + dict, "r")
         choices = f.read().split()
         f.close()
