@@ -35,4 +35,6 @@ $(document).ready(function() {
       $('nav').css('background-color', 'rgba(0, 0, 0, 1)');
     }
   })
+
+  $('.foot span').text(new Date().getFullYear());
 });
