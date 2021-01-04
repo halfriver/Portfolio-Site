@@ -21,11 +21,6 @@ class MainProgram(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-    def get_program_text():
-        with open(template_name, 'r') as f:
-            program_text = f.readlines()
-        return HttpResponse(program_text)
-
 
 class Dict(View):
     def get(self, request, *args, **kwargs):

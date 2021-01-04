@@ -15,21 +15,26 @@ $(document).ready(function() {
     }
   }
 
-  $(document).click(function( e ){
-    var parentsClick = []
+  $(document).click(function( e ) {
+    var parentsClick = [];
     $(e.target).parents().each( function() {
-      parentsClick.push( $(this).attr('id') )
+      if ( $(this).attr('class') ) {
+        parentsClick.push( $(this).attr('class') )
+      }
     });
     if ( parentsClick.includes('modal-trigger') ) {
       if ( $(e.target).hasClass( "demobtn") ) {
         $( '#nav-' + $(e.target).data('program') + '-tab' ).click();
       }
       else {
-        openModal($(e.target).closest( "#modal-trigger").data('program'));
+        openModal($(e.target).closest(".modal-trigger").data('program'));
       }
     }
-    else if ( $(e.target).attr('id') ) {
-      if ( $(e.target).attr('id').startsWith('modal-') ) {
+    else if ( parentsClick.includes('modal') ) {
+      if ( parentsClick.includes('modal-con') ) {
+        return;
+      }
+      else {
         closeModal();
       }
     }
@@ -38,4 +43,14 @@ $(document).ready(function() {
   $('.close').click(function() {
     closeModal();
   });
+
+  var modalHeight = Math.floor($(window).height()*0.95)
+  $('.modal-content').css('max-height', modalHeight);
+  $('.card-body').css('max-height', modalHeight*0.6);
+
+  $(".scrollable").floatingScroll();
+  $('.card-header').click(function( e ) {
+    console.log( $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable") )
+    $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable").floatingScroll("update");
+  })
 });
