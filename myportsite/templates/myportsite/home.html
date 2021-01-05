@@ -3,6 +3,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block scripts %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
 {% block title %} | About{% endblock %}
 {% block nav-home %}active{% endblock %}
 {% block banner %}
@@ -67,11 +71,16 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12 section-head"><h4>Art</h4></div>
-    <div class="col-12 section-body">
-      <p>When I find the time, I like to draw. My preferred medium is digital, usually using Photoshop and an art tablet. I have done some simple pieces for friends in the past, but mostly I create for my own pleasure. I aim to further hone my technique (particularly with color) and eventually create game assets. I'd like to become more comfortable in my own style so that I can produce at a more consistent clip.</p>
-      <p>Some samples of my work can be found in the <a href="{% url 'main_art' %}">art section</a>.</p>
+  <div class="row align-items-center">
+    <div class="col-md-4 col-lg-3">
+      <img id="art-pic" src="{% static 'media/defaultfish.png' %}">
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <div class="section-head"><h4>Art</h4></div>
+      <div class="section-body">
+        <p>When I find the time, I like to draw. My preferred medium is digital, usually using Photoshop and an art tablet. I have done some simple pieces for friends in the past, but mostly I create for my own pleasure. I aim to further hone my technique (particularly with color) and eventually create game assets. I'd like to become more comfortable in my own style so that I can produce at a more consistent clip.</p>
+        <p>Some samples of my work can be found in the <a href="{% url 'main_art' %}">art section</a>.</p>
+      </div>
     </div>
   </div>
 

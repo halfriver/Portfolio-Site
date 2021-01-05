@@ -163,9 +163,9 @@
               <div class="card-header" id="headingPython-{{i|cut:" "}}" data-toggle="collapse" data-target="#python-{{i|cut:" "}}" data-language="python" data-project="{{i|cut:" "}}" aria-expanded="true" aria-controls="python-{{i|cut:" "}}">
                 Python
               </div>
-              <div id="python-{{i|cut:" "}}" class="collapse show" aria-labelledby="headingPython-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
-                <div class="card-body console-display scrollable">
-                  <pre>{{i.python|print_file_content}}</pre>
+              <div id="python-{{i|cut:" "}}" class="collapse show fl-scrolls-viewport" aria-labelledby="headingPython-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
+                <div class="card-body console-display fl-scrolls-body">
+                  <pre class="scrollable">{{i.python|print_file_content}}</pre>
                 </div>
               </div>
               {% endif %}
@@ -179,9 +179,9 @@
               <div class="card-header collapsed" id="headingJS-{{i|cut:" "}}" data-toggle="collapse" data-target="#js-{{i|cut:" "}}" data-language="js" data-project="{{i|cut:" "}}" aria-expanded="false" aria-controls="js-{{i|cut:" "}}">
                 JavaScript
               </div>
-              <div id="js-{{i|cut:" "}}" class="collapse" aria-labelledby="headingJS-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
-                <div class="card-body console-display scrollable">
-                  <pre>{{i.js|print_file_content}}</pre>
+              <div id="js-{{i|cut:" "}}" class="collapse fl-scrolls-viewport" aria-labelledby="headingJS-{{i|cut:" "}}" data-parent="#accordion{{i|cut:" "}}">
+                <div class="card-body console-display fl-scrolls-body">
+                  <pre class="scrollable">{{i.js|print_file_content}}</pre>
                 </div>
               </div>
               {% endif %}

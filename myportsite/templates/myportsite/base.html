@@ -18,6 +18,7 @@
     <script src="{% static 'cdn/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
     <script src="{% static 'js/cookies.js' %}"></script>
+    <script src="{% static 'js/darkmode.js' %}"></script>
     {% block scripts %}{% endblock scripts %}
 
     <title>Kayko Ohkawa{% block title %}{% endblock title %}</title>
@@ -66,7 +67,7 @@
                 <i class="fa fa-icon">&#xf16d;</i>
               </a>
             </li>
-            <li class="nav-item">
+            <li id="darkmode" class="nav-item">
               <label class="switch p-2" title="Dark Mode Toggle">
                 <input type="checkbox"><span class="slider round"></span>
               </label>

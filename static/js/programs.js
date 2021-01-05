@@ -2,17 +2,12 @@ $(document).ready(function() {
   function openModal(program) {
     $("#modal-" + program).css('display', 'block');
     $('body').css("overflow-y","hidden");
+    $(".scrollable").floatingScroll("update");
   }
 
   function closeModal() {
     $('.modal').css("display","none");
     $('body').css("overflow-y","visible");
-  }
-
-  function isModal(x) {
-    for (let i = 0; i < x.length; i++) {
-
-    }
   }
 
   $(document).click(function( e ) {
@@ -49,8 +44,9 @@ $(document).ready(function() {
   $('.card-body').css('max-height', modalHeight*0.6);
 
   $(".scrollable").floatingScroll();
-  $('.card-header').click(function( e ) {
-    console.log( $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable") )
-    $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable").floatingScroll("update");
-  })
+  $('.card-header').click(function() {
+    // console.log( $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable") );
+    // $('#' + $(e.target).data('language') + "-" + $(e.target).data('project')).find(".scrollable").floatingScroll("update");
+    $(".scrollable").floatingScroll("update");
+  });
 });

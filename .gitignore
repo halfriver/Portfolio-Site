@@ -11,3 +11,5 @@ static/media/*
 static/files/*
 static/art/*
 static/cdn/*
+programming/templatetags/__pycache__/
+*/*/migrations/*
