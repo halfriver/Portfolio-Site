@@ -73,6 +73,10 @@ h6 {
   font-size: 1.25rem;
 }
 
+b {
+  font-weight: 600;
+}
+
 .large-banner-container {
   position: absolute;
   width: 100%;
@@ -320,4 +324,8 @@ input:checked + .slider:before {
 
 #search {
   align-items: right;
+}
+
+.contact span:nth-child(2n + 1){
+	display: none;
 }
