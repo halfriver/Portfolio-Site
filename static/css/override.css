@@ -188,6 +188,11 @@ nav {
   text-indent: 50px;
 }
 
+.divider {
+  max-width: 95%;
+  padding: 0.5rem 1rem;
+}
+
 .hobby-col {
   padding-right: 5px;
   padding-left: 5px;
@@ -203,7 +208,7 @@ nav {
   transition: transform .2s;
 }
 
-.hobby-pic:hover {
+.hobby-pic:hover, #art-pic:hover {
   transform: scale(1.05);
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.45);
 }
@@ -215,6 +220,7 @@ nav {
   margin-right: auto;
   max-width: 100%;
   max-height: 250px;
+  transition: transform .2s;
 }
 
 a {
