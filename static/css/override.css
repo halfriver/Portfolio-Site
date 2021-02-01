@@ -1,5 +1,5 @@
 /*
-DEFAULT COLORS
+THEME COLORS
   color-white           #f2f2f2
   color-offwhite        #e3e3da
   color-offwhite2       #d1d1c5
@@ -13,8 +13,6 @@ DEFAULT COLORS
   accent-color          #0a483b
   accent-light          #065c4a
   accent-fade           #a4bfba
-
-DARK MODE COLORS
 */
 
 ::-webkit-scrollbar {
@@ -208,7 +206,7 @@ nav {
   transition: transform .2s;
 }
 
-.hobby-pic:hover, #art-pic:hover {
+.hobby-pic:hover {
   transform: scale(1.05);
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.45);
 }
