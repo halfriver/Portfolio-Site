@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var w = window.innerWidth;
+  console.log(w);
 
   var collapseStart = 120;
   var atTop = true;
@@ -39,6 +41,10 @@ $(document).ready(function() {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   });
+
+  // if (w <= 768) {
+  //   $('.divider').attr('hidden');
+  // }
 
   $('.foot span').text(new Date().getFullYear());
 });
