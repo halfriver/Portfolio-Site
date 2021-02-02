@@ -4,11 +4,9 @@ media/
 
 ## Ignore migrations/database
 
-*/migrations/0*.py
 db.sqlite3
 */__pycache__/*
 static/art/*
 static/cdn/*
 programming/templatetags/__pycache__/
-*/*/migrations/0*.py
 programming/templatetags/__pycache__/
