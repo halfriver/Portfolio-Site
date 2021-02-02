@@ -42,9 +42,10 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   });
 
-  // if (w <= 768) {
-  //   $('.divider').attr('hidden');
-  // }
+  if (w <= 768) {
+    console.log('True')
+    $('.divider').hide();
+  }
 
   $('.foot span').text(new Date().getFullYear());
 });
