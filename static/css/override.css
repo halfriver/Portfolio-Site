@@ -188,8 +188,11 @@ nav {
 }
 
 .divider {
+  display: block;
   max-width: 95%;
   padding: 0.5rem 1rem;
+  height: auto;
+  width: auto;
 }
 
 .hobby-col {
@@ -197,8 +200,11 @@ nav {
 }
 
 .hobby-pic {
+  display: block;
   border-radius: 0.3rem;
   max-height: 275px;
+  height: auto;
+  width: auto;
   transition: transform .2s;
 }
 
