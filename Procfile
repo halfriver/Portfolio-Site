@@ -1,1 +1,2 @@
-web: gunicorn myportsite.wsgi
+release: python manage.py migrate --noinput
+web: gunicorn myportsite.wsgi --log-file -
