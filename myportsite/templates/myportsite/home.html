@@ -11,7 +11,7 @@
 {% block nav-home %}active{% endblock %}
 {% block banner %}
 <div class="large-banner-container">
-  <img class="large-banner" src="{% static 'media/banner_test.png' %}">
+  <img class="large-banner" src="{% static 'media/IMG_3680.JPG' %}">
 </div>
 {% endblock banner %}
 
@@ -19,7 +19,7 @@
 <div class="large-banner-text row">
   <div class="col-12">
     <h1>I'm Kayko Ohkawa</h1>
-    <h2>Welcome to my site!</h2>
+    <h3>Aspiring Data Analyst</h3>
   </div>
 </div>
 {% endblock %}
@@ -27,11 +27,11 @@
 {% block content %}
 <div class="container" style="padding-top:20px;">
   <div class="row align-items-center">
+    <div class="col-12 section-head"><h4>About</h4></div>
     <div class="col-12 col-lg-4">
-      <img id="avatar" src="{% static 'media/christmasfish.png' %}">
+      <img id="avatar" src="{% static 'media/profile.png' %}">
     </div>
     <div class="col-12 col-lg-8">
-      <div class="section-head"><h4>About</h4></div>
       <div class="section-body">
         <p>I am a graduate student in the Quantitative Economics program at the University of Pittsburgh, and will be finishing my master's degree in April 2021. My capstone project will involve working with the Pittsburgh Penguins to model appropriate salaries for minor league hockey players.</p>
         <p>I graduated from the University of Pittsburgh in 2017 with bachelor's degrees in economics and geology. As an undergraduate, I studied abroad at Sophia University in Tokyo, Japan on a Nationality Room Scholarship and participated in research as a Pitt Honors College fellow.</p>
@@ -54,7 +54,7 @@
       </p>
       <p>I maintain three aquariums in my home, ranging from a 5 gallon inhabited by snails and a carnivorous pea puffer named Petunia to a 75 gallon filled with a lively community of pearl gourami, neon tetras, bristlenose pleco catfish, and a betta. </p>
       <p>In the end though, I consider continuing my education more of a hobby than a chore, and spend a great deal of time branching off from my academic roots to teach myself web design and development, 3D modelling, and more.</p>
-      <div class="row justify-content-center flex-nowrap">
+      <!-- <div class="row justify-content-center flex-nowrap">
         <div class="col-auto hobby-col">
           <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" title="Dixie National Forest">
         </div>
@@ -66,6 +66,20 @@
         </div>
         <div class="col-auto hobby-col">
           <img class="hobby-pic img-fluid" src="{% static 'media/syncline.jpeg' %}" title="Look at that syncline!">
+        </div>
+      </div> -->
+      <div id="hobby-collection" class="row justify-content-center">
+        <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/razzledazzle.png' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Dixie National Forest</span>">
+        </div>
+        <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/cinnabar.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>His name is Cinnabar</span>">
+        </div>
+        <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/garden.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Probably overwatering them</span>">
+        </div>
+        <div class="col-md-3 col-6 hobby-col d-flex justify-content-center">
+          <img class="hobby-pic img-fluid" src="{% static 'media/syncline.jpeg' %}" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<span class='hobby-tooltip'>Look at that syncline!</span>">
         </div>
       </div>
     </div>
@@ -91,11 +105,11 @@
     <img class="divider" src="{% static 'media/divider.png' %}">
   </div>
   <div class="row align-items-center">
+    <div class="col-12 section-head"><h4>Art</h4></div>
     <div class="col-md-4 col-lg-3">
       <img id="art-pic" src="{% static 'media/defaultfish.png' %}">
     </div>
     <div class="col-md-8 col-lg-9">
-      <div class="section-head"><h4>Art</h4></div>
       <div class="section-body">
         <p>When I find the time, I like to draw. My preferred medium is digital, using Photoshop and an art tablet. I have done some simple pieces for friends in the past, but mostly I create for my own pleasure. I aim to further hone my technique (particularly with color and landscapes). Eventually I'd like to create game assets and concept art. But as a more general goal, I'd like to become more comfortable in my own style so that I can produce more and at a more consistent clip.</p>
         <p>Some samples of my work can be found in the <a href="{% url 'main_art' %}">art section</a>.</p>
@@ -109,10 +123,10 @@
   <div class="row">
     <div class="col-12 section-head"><h4>Contact</h4></div>
     <div class="col-12 section-body">
-      <p>Please feel free to contact me at
+      <p>I have a wide variety of interests, so please feel free to contact me at
         <b class="contact"><span>.</span><span>o</span><span>?</span><span>h</span><span>r</span><span>k</span><span>fg</span><span>a</span><span>k</span><span>w</span><span>p</span><span>a</span><span>s</span><span>2</span><span>l</span><span>.</span><span>g</span><span>0</span><span>m</span><span>@</span><span>@</span><span>g</span><span>x</span><span>m</span><span>i</span><span>a</span><span>e</span><span>i</span><span>d</span><span>l</span><span>l</span><span>.</span><span>w</span><span>c</span><span>m</span><span>o</span><span>z</span><span>m</span></b>
         anytime!
-        I'd love to discuss anything related to anything that's mentioned here on my website. I have a wide variety of interests
+        I'd love to discuss anything related to anything that's mentioned here on my website.
       </p>
     </div>
   </div>

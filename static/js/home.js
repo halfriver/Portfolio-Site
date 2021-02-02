@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var w = window.innerWidth;
   var m = new Date().getMonth();
   var d = new Date().getDate();
   if (m == 2 && d == 27) {

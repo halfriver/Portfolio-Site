@@ -34,7 +34,11 @@ $(document).ready(function() {
     else {
       $('nav').css('background-color', 'rgba(0, 0, 0, 1)');
     }
-  })
+  });
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
 
   $('.foot span').text(new Date().getFullYear());
 });
