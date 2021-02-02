@@ -14,4 +14,3 @@ static/cdn/*
 programming/templatetags/__pycache__/
 */*/migrations/*
 programming/templatetags/__pycache__/
-myportsite/secrets.py
