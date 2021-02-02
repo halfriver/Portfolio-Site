@@ -7,8 +7,6 @@ media/
 */migrations/*
 db.sqlite3
 */__pycache__/*
-static/media/*
-static/files/*
 static/art/*
 static/cdn/*
 programming/templatetags/__pycache__/
