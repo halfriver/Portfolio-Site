@@ -189,10 +189,9 @@ nav {
 
 .divider {
   display: block;
-  max-width: 95%;
+  width: 95%;
   padding: 0.5rem 1rem;
   height: auto;
-  width: auto;
 }
 
 .hobby-col {
@@ -205,6 +204,7 @@ nav {
   max-height: 275px;
   height: auto;
   width: auto;
+  object-fit: cover;
   transition: transform .2s;
 }
 
