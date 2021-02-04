@@ -34,12 +34,13 @@ p {
 }
 
 .cv-title {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
+  font-weight: 500;
 }
 
 .cv-head {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 500;
 }
 
 .cv-body {
@@ -56,4 +57,12 @@ p {
 .fa-link {
   font-size: 0.75rem;
   color: #787878;
+}
+
+#section-skills {
+  text-align: center;
+}
+
+#section-skills .cv-head {
+  margin-bottom: 0.5rem;
 }
