@@ -115,6 +115,18 @@ a {
   border-radius: 5px;
 }
 
+.python:hover {
+  border-color: #3e729c;
+}
+
+.js:hover {
+  border-color: #161716;
+}
+
+.r:hover {
+  border-color: #823333;
+}
+
 .demo {
   padding-top: 1rem;
 }
